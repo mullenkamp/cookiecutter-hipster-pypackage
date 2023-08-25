@@ -3,6 +3,7 @@
     "email": "mullenkamp1@gmail.com",
     "github_username": "mullenkamp",
     "project_name": "template",
+    "project_short_description": "",
     "dist_name": "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
     "package_name": "{{cookiecutter.dist_name.replace('-', '_')}}",
     "repository_name": "{{cookiecutter.github_username}}/{{cookiecutter.dist_name}}",
