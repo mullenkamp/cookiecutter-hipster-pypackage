@@ -1,6 +1,6 @@
 """{{cookiecutter.project_short_description}}"""
 
-__version__ = "0.0.0"
+__version__ = "0.0.1"
 
 
 def add(a: int, b: int) -> int:
