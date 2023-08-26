@@ -1,5 +1,5 @@
 #! /bin/bash
 
-set -e
+# set -e
 
-hatch env create
+# hatch env create

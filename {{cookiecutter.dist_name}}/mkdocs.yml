@@ -44,7 +44,7 @@ plugins:
         handlers:
             python:
                 import:
-                    - https://docs.python.org/{{ cookiecutter.python_version }}/objects.inv
+                    - https://docs.python.org/{{ cookiecutter.main_python_version }}/objects.inv
                 options:
                     docstring_style: google
 

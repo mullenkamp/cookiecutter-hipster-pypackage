@@ -5,17 +5,17 @@ authors = [
 ]
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
-dynamic = ["version"]
+version = 0.0.1
 classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
-requires-python = ">={{ cookiecutter.python_version }}"
+requires-python = ">={{ cookiecutter.main_python_version }}"
 dependencies = [
 ]
 
-[tool.ruff]
-target-version = "py{{ cookiecutter.python_version | replace(".", "") }}"
-extend-select = ["I", "TRY", "UP"]
+# [tool.ruff]
+# target-version = "py{{ cookiecutter.main_python_version | replace(".", "") }}"
+# extend-select = ["I", "TRY", "UP"]
 
 [tool.pytest.ini_options]
 addopts = "--cov={{ cookiecutter.package_name }}/ --cov-report=term-missing"
@@ -28,13 +28,13 @@ asyncio_mode = "strict"
 [tool.hatch.metadata]
 allow-direct-references = true
 
-[tool.hatch.version]
-source = "regex_commit"
-commit_extra_args = ["-e"]
-path = "{{ cookiecutter.package_name }}/__init__.py"
+# [tool.hatch.version]
+# source = "regex_commit"
+# commit_extra_args = ["-e"]
+# path = "{{ cookiecutter.package_name }}/__init__.py"
 
 [tool.hatch.envs.default]
-python = "{{ cookiecutter.python_version }}"
+python = "{{ cookiecutter.main_python_version }}"
 dependencies = [
     "spyder-kernels=={{ cookiecutter.spyder_kernel }}",
     "black",
@@ -50,7 +50,7 @@ dependencies = [
 ]
 
 [[tool.hatch.envs.all.matrix]]
-python = ["3.8", "3.9", "3.10", "3.11"]
+python = [{{ cookiecutter.all_python_versions }}]
 
 [tool.hatch.envs.lint]
 detached = true
@@ -95,7 +95,7 @@ line-length = 120
 skip-string-normalization = true
 
 [tool.ruff]
-target-version = "py37"
+target-version = "py{{ cookiecutter.main_python_version | replace(".", "") }}"
 line-length = 120
 select = [
   "A",
